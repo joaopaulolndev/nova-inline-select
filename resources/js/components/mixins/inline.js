@@ -1,7 +1,8 @@
 export default {
     data() {
         return {
-            showUpdateButton: false
+            showUpdateButton: false,
+            refresh: false
         };
     },
 
@@ -34,7 +35,10 @@ export default {
                 )
                 .finally(() => {
                     this.showUpdateButton = false;
-                    window.location.reload();
+
+                    if (this.refresh) {
+                        window.location.reload();
+                    }
                 });
         }
     }

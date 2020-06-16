@@ -94,6 +94,16 @@ class InlineSelect extends Field
     }
 
     /**
+     * Enable refresh after save.
+     *
+     * @return $this
+     */
+    public function refreshAfterSave($refresh = true)
+    {
+        return $this->withMeta(['refresh' => $refresh]);
+    }
+
+    /**
      * Enable inline editing on index view.
      *
      * @return $this
